@@ -2,7 +2,7 @@
 
 ### Problem to Solve
 
-In the movie Moneyball, Oakland Athletics general manager Billy Beane attempts to build a baseball team with a budget of less than $40 million, less than 1/3 than the budget of the New York Yankees. In just one season (2002), he built a team nearly from the ground up that won 103 out of 162 games, winning their division by 4 games. Their season ended when they were defeated by the Minnesota Twins in the first round of the playoffs, but Beane changed the game forever by introducing robust statistical analysis to the game of baseball.
+In the movie *Moneyball*, Oakland Athletics general manager Billy Beane attempts to build a baseball team with a budget of less than $40 million, less than 1/3 than the budget of the New York Yankees. In just one season (2002), he built a team nearly from the ground up that won 103 out of 162 games, winning their division by 4 games. Their season ended when they were defeated by the Minnesota Twins in the first round of the playoffs, but Beane changed the game forever by introducing robust statistical analysis to the game of baseball.
 
 If someone wanted to do this today, how could a new team owner or GM achieve this? What is the minimum amount of money an MLB team needs to be successful? If a new team is going to be formed, how much money does the owner need to spend on players for the team to win at least half their games?
 
@@ -12,12 +12,9 @@ While in reality some team owners may have goals other than winning championship
 
 ### The Data and Some Background about Baseball
 
-For this project, I will use the Lahman Baseball Database. I acquired the data through [Kaggle](https://www.kaggle.com/seanlahman/the-history-of-baseball/data). The dataset includes a wide variety of data from every Major League Baseball (MLB) league from 1871 to 2015.
+For this project, I will use the Lahman Baseball Database. I acquired the data through [Kaggle](https://www.kaggle.com/seanlahman/the-history-of-baseball/data). The dataset includes a wide variety of data from every Major League Baseball (MLB) league, team, and player. Although much of the data is available from the 1871 to the 2015 seasons, the `salary` dataset only includes data on players from 1985 to 2015, so we will limit our analysis to these years.
 
-Although much of the data is available from the 1871 to the 2015 seasons, the
-`salary` dataset only includes data on players from 1985 to 2015, so we will imit our analysis to these years.
-
-Most of the datasets are organized by season and player. For example, row 21109 of the `salary` dataset includes salary data about Alex Rodriguez in 2010. Players often play for multiple seasons in their career. The mean number of seasons played for all players 1985-2015 is about 5 seasons. Seasons include 162 games, and run from March to September.
+Most of the datasets are organized by season and player. For example, row 21109 of the `salary` dataset includes salary data about Alex Rodriguez in 2010. Players often play for multiple seasons in their career. The mean number of seasons played for all players 1985-2015 is about 5 seasons. Modern-day seasons include 162 games, running from March to September.
 
 The `player` dataset is organized by player alone, as these data do not change from year to year. The `team` dataset, obviously, is organized by season and team, not player.
 
@@ -25,13 +22,11 @@ In baseball, and thus in this dataset, there are two different kinds of players:
 
 One factor that may contribute to differences in stats is that some teams are in the American League while others are in the National League. The American League, because they have a designated hitter and the pitchers do not hit, tend to have bigger hitters, who tend to be paid higher salaries. Statistically, this means that while the leagues have similar median and mean salaries, the standard deviation of AL salaries tends to be larger.
 
-
-
 ### Salary Over Time
 
 Salaries have increased significantly since 1985. From 1985 to 2015, total team salaries increased by over a factor of 11, though about half of the increase is due to inflation. Adjusting for inflation, total team salaries have still increased by a factor of 5. The rise in salaries has been fairly steady over time, though there is a sharp increase in median salary beginning in 2013.
 
-The distributions of both total team salaries and individual player salaries are consistently right-tailed over time.
+The distributions of both total team salaries and individual player salaries are consistently right-tailed over time, even when logged.
 
 ### Impact of Salary on Wins
 
